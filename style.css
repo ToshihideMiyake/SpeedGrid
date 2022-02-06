@@ -262,6 +262,7 @@ img {
 
 .featureicon div {
   width: 100%;
+  height:100%;
 }
 
 .featureicon img {
@@ -523,6 +524,9 @@ img {
   }
   .feature {
     gap: 30px;
+  }
+  .featuretitle p{
+   font-size: 22px;
   }
   .summary, .usage-table, .note, .mac-window, .usages, .features {
     width: 90vw;
