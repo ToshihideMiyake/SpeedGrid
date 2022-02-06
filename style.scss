@@ -11,9 +11,10 @@ $bg-color:#f9f9f9;
 $tableborder:1px solid #616060;
 $sliderbtnheight:400px;
 $sliderheight:300px;
-$sizes: sp,tb;
+$sizes: se,sp,tb;
 $breakpoint-range:(
-    'sp': 'screen and (min-width: 0px) and (max-width: 599px)',
+    'se': 'screen and (min-width: 0px) and (max-width: 320px)',
+    'sp': 'screen and (min-width: 321px) and (max-width: 599px)',
     'tb': 'screen and (min-width: 600px) and (max-width: 1024px)',
   ) !default;
 @mixin mq($breakpoint:sp){
@@ -32,6 +33,9 @@ $breakpoint-range:(
 @mixin Transition {
     transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
+}
+html{
+    overscroll-behavior: none;
 }
 body{
     font-family: $font;
@@ -443,6 +447,139 @@ img{
     }
 }
 // レスポンシブ
+@include mq("se"){
+    header{
+        .mac-window{
+            width: 90vw;
+        }
+        svg{
+            width: 270px; 
+        }
+    }
+    .window1{
+        height: 200px;
+        .container{
+            width: 80%;
+        }
+    }
+    p{
+        font-size: 1em;
+    }
+    h1 {
+     font-size: 35px;
+     font-weight: 800;
+    }
+    .icon{
+        width: 100px;
+    }
+    .features{
+     flex-direction: column;
+     height: fit-content;
+     margin: 50px 0;
+     gap: 100px;
+    }
+    .feature,.slider-window,.slider-codes,.window2{
+        width: 90%;
+    }
+    .feature{
+        gap: 30px;
+    }
+    .featuretitle{
+        p{
+            font-size: 24px;
+        }
+    }
+    .featureicon{
+        div{
+            height: 100%;
+        }
+    }
+    .summary,.usage-table,.note,.mac-window,.usages,.features{
+        width: 90vw;
+    }
+    .summary{
+        code{
+            font-size: 20px;
+        }
+    }
+    .usage{
+        max-width: 90vw;
+    }
+    .usage-table{
+        height: 50vh;
+        line-height: 1;
+        .strings{
+            p{
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+        .xxx{
+         p{
+             font-size: 35px;
+         }
+        } 
+        .yyy{
+            p{
+                font-size: 12px;
+                font-weight: 900;
+            }
+        }
+        div{
+            p{
+                font-size: 10px;
+                font-weight: normal;
+            }
+        }
+    }
+    .slider-window{
+        height: 200px;
+        div{
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .slider-btn{
+        width: 10%;
+        height: 300px;
+    }
+    .usage-pic{
+        svg{
+            width: 90vw;
+        }
+    }
+    .window2{
+        height: 250px;
+        .container{
+            width: 90%;
+            height: 60%;
+        }
+    }
+    #gap-samples{
+        div{
+       width: 40px;
+       height: 40px;     
+     }
+    }
+    .links{
+        &:hover{
+            &::before{
+                display: none;
+            }
+        }
+    }
+    .scrtotop{
+        right: 8px;
+        width: 32px;
+        height: 32px;
+    }
+ //    buy me a coffee
+    .bmc-btn{
+        font-size: 1em !important;
+        height: 50px !important;
+        font-weight: normal !important;
+    }
+}
 @include mq("sp"){
    header{
        .mac-window{
@@ -476,6 +613,16 @@ img{
    }
    .feature{
        gap: 30px;
+   }
+   .featuretitle{
+       p{
+           font-size: 24px;
+       }
+   }
+   .featureicon{
+       div{
+           height: 100%;
+       }
    }
    .summary,.usage-table,.note,.mac-window,.usages,.features{
        width: 90vw;
@@ -606,3 +753,4 @@ img{
         }
     }
 }
+
